@@ -6,14 +6,10 @@ function init() {
       let div = document.getElementById("comments");
       for(let i = 0; i < json.length; i++) {
         div.innerHTML += `
-          <div class="comment">
-            <ul>
-              <li>Post ID: ${json[i].postId}</li>
-              <li>Comment ID: ${json[i].id}</li>
-              <li>Name: ${json[i].name}</li>
-              <li>Email: ${json[i].email}</li>
-              <li>Comment: ${json[i].body}</li>
-            </ul>
+          <div class="comment" id="ex-comment-${json[i].id}">
+              <h1>${json[i].name}</h1>
+              <h3>Email: <a href="mailto:${json[i].email}">${json[i].email}</a></h3>
+              <p><strong>Comment:</strong> ${json[i].body}</p>
           </div>
         `;
       }
